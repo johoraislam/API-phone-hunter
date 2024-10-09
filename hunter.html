@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Hunter API</title>
-    <!-- daisy ui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Hunter API</title>
+  <!-- daisy ui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
+
 <body>
-    <header>
-        <h1 class="  text-6xl font-semibold my-3 mx-5 ">Phone Hunter</h1>
-    </header>
+  <header>
+    <h1 class="  text-6xl font-semibold my-3 mx-5 ">Phone Hunter</h1>
+  </header>
 
-    <main>
-      <section class="bg-slate-500 my-4">
-        <input id="search-field"
-    type="text"
-    placeholder="search..."
-    class="input input-bordered input-primary w-full max-w-xs mr-2 mx-6 my-6 " />
-    <button onclick="searchHandler()" class="btn btn-accent">Search</button>
-      </section>
-      <!-- loader spiner -->
-      <div id="spiner" class="text-center my-4 mx-4 hidden">
-        <span class="loading loading-bars text-red-600 loading-lg"></span>
+  <main>
+    <section class="bg-slate-500 my-4">
+      <input id="search-field" type="text" placeholder="search..."
+        class="input input-bordered input-primary w-full max-w-xs mr-2 mx-6 my-6 " />
+      <button onclick="searchHandler()" class="btn btn-accent">Search</button>
+    </section>
+    <!-- loader spiner -->
+    <div id="spiner" class="text-center my-4 mx-4 hidden">
+      <span class="loading loading-bars text-red-600 loading-lg"></span>
+    </div>
+    <!-- search section -->
+    <section class="mx-auto">
+      <div id="Phone-container" class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
       </div>
-      <!-- search section -->
-        <section class="mx-auto">
-            <div id="Phone-container" class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-            </div>
-            <!-- show all -->
-            <div id="show-all-container" class="hidden text-center my-4">
-                <button onclick="showAll()" class="btn btn-secondary">show all</button>
-            </div>
-        </section>
-    </main>
+      <!-- show all -->
+      <div id="show-all-container" class="hidden text-center my-4">
+        <button onclick="showAll()" class="btn btn-secondary">show all</button>
+      </div>
+    </section>
+    <!-- show modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <h3 id="show-details-phone-name" class="text-lg font-bold"></h3>
+        
+        <div id="show-detail-container">
 
-    <footer>
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+  </main>
+   
+  <footer>
 
-    </footer>
-    <script src="./js/hunter.js"></script>
+  </footer>
+  <script src="./js/hunter.js"></script>
 </body>
+
 </html>
